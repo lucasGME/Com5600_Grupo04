@@ -25,6 +25,12 @@
           <AssociatedConnUserName />
           <FullPath>00_crear_tablas.sql</FullPath>
         </FileNode>
+        <FileNode Name="01_sp_operaciones_abm.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-OEUG4KG:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-OEUG4KG</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>01_sp_operaciones_abm.sql</FullPath>
+        </FileNode>
       </Items>
     </LogicalFolder>
     <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
