@@ -115,6 +115,25 @@ BEGIN
 END;
 GO
 
+IF OBJECT_ID(N'parques.entrada', N'U') IS NULL
+BEGIN
+	CREATE TABLE parques.entrada
+	(
+		id_entrada INT IDENTITY(1,1) NOT NULL,
+		precio_base DECIMAL(12,2) NOT NULL,
+		fecha_desde DATE NOT NULL,
+		fecha_hasta DATE NOT NULL,
+		id_parque INT NOT NULL,
+		id_tipo_visitante INT NOT NULL,
+		CONSTRAINT pk_entrada PRIMARY KEY CLUSTERED (id_entrada),
+		CONSTRAINT ck_entrada_precio_base CHECK (precio_base >= 0),
+		CONSTRAINT ck_entrada_fechas CHECK (fecha_hasta >= fecha_desde),
+		CONSTRAINT fk_entrada_parque FOREIGN KEY (id_parque) REFERENCES parques.parque (id_parque),
+		CONSTRAINT fk_entrada_tipo_visitante FOREIGN KEY (id_tipo_visitante) REFERENCES parques.tipo_visitante (id_tipo_visitante)
+	);
+END;
+GO
+
 IF OBJECT_ID(N'parques.parque', N'U') IS NULL
 BEGIN
 	CREATE TABLE parques.parque
@@ -173,7 +192,8 @@ BEGIN
 		activo BIT NOT NULL CONSTRAINT df_guardaparques_activo DEFAULT (1),
 		CONSTRAINT pk_guardaparques PRIMARY KEY CLUSTERED (id_guardaparques),
 		CONSTRAINT uq_guardaparques_legajo UNIQUE (legajo),
-		CONSTRAINT uq_guardaparques_email UNIQUE (email)
+		CONSTRAINT uq_guardaparques_email UNIQUE (email),
+		CONSTRAINT ck_guardaparques_fecha_nacimiento CHECK (fecha_nacimiento <= CONVERT(date, SYSDATETIME()))
 	);
 END;
 GO
@@ -227,7 +247,8 @@ BEGIN
 		id_estado_guia INT IDENTITY(1,1) NOT NULL,
 		descripcion VARCHAR(100) NOT NULL,
 		CONSTRAINT pk_estado_guia PRIMARY KEY CLUSTERED (id_estado_guia),
-		CONSTRAINT uq_estado_guia_descripcion UNIQUE (descripcion)
+		CONSTRAINT uq_estado_guia_descripcion UNIQUE (descripcion),
+		CONSTRAINT ck_estado_guia_descripcion CHECK (descripcion IN ('Activo', 'Inactivo', 'Suspendido', 'Retirado'))
 	);
 END;
 GO
@@ -248,6 +269,7 @@ BEGIN
 		CONSTRAINT pk_guia PRIMARY KEY CLUSTERED (id_guia),
 		CONSTRAINT uq_guia_legajo UNIQUE (legajo),
 		CONSTRAINT uq_guia_email UNIQUE (email),
+		CONSTRAINT ck_guia_fecha_nacimiento CHECK (fecha_nacimiento <= CONVERT(date, SYSDATETIME())),
 		CONSTRAINT fk_guia_titulo FOREIGN KEY (id_titulo) REFERENCES rrhh.titulo (id_titulo),
 		CONSTRAINT fk_guia_especialidad FOREIGN KEY (id_especialidad) REFERENCES rrhh.especialidad (id_especialidad),
 		CONSTRAINT fk_guia_estado_guia FOREIGN KEY (id_estado_guia) REFERENCES rrhh.estado_guia (id_estado_guia)
@@ -293,7 +315,7 @@ BEGIN
 		total DECIMAL(12,2) NOT NULL,
 		id_punto_venta INT NOT NULL,
 		id_parque INT NOT NULL,
-		id_pago INT NULL, -- Permite registrar ventas sin pago asociado inicialmente
+		id_pago INT NULL, -- Permite registrar ventas sin pago asociado (sin costo)
 		CONSTRAINT pk_venta PRIMARY KEY CLUSTERED (id_venta),
 		CONSTRAINT ck_venta_total CHECK (total >= 0),
 		CONSTRAINT fk_venta_punto_venta FOREIGN KEY (id_punto_venta) REFERENCES ventas.punto_venta (id_punto_venta),
@@ -331,25 +353,6 @@ BEGIN
 END;
 GO
 
-IF OBJECT_ID(N'ventas.entrada', N'U') IS NULL
-BEGIN
-	CREATE TABLE ventas.entrada
-	(
-		id_entrada INT IDENTITY(1,1) NOT NULL,
-		precio_base DECIMAL(12,2) NOT NULL,
-		fecha_desde DATE NOT NULL,
-		fecha_hasta DATE NOT NULL,
-		id_parque INT NOT NULL,
-		id_tipo_visitante INT NOT NULL,
-		CONSTRAINT pk_entrada PRIMARY KEY CLUSTERED (id_entrada),
-		CONSTRAINT ck_entrada_precio_base CHECK (precio_base >= 0),
-		CONSTRAINT ck_entrada_fechas CHECK (fecha_hasta >= fecha_desde),
-		CONSTRAINT fk_entrada_parque FOREIGN KEY (id_parque) REFERENCES parques.parque (id_parque),
-		CONSTRAINT fk_entrada_tipo_visitante FOREIGN KEY (id_tipo_visitante) REFERENCES parques.tipo_visitante (id_tipo_visitante)
-	);
-END;
-GO
-
 IF OBJECT_ID(N'ventas.pase_entrada', N'U') IS NULL
 BEGIN
 	CREATE TABLE ventas.pase_entrada
@@ -374,7 +377,7 @@ BEGIN
 		id_actividad_programada INT IDENTITY(1,1) NOT NULL,
 		fecha_hora DATETIME2(0) NOT NULL,
 		id_actividad_turistica INT NOT NULL,
-		id_guia INT NOT NULL,
+		id_guia INT NULL, -- Permite programar actividades sin guía asignado
 		CONSTRAINT pk_actividad_programada PRIMARY KEY CLUSTERED (id_actividad_programada),
 		CONSTRAINT ck_actividad_programada_fecha_hora CHECK (fecha_hora >= SYSDATETIME()),
 		CONSTRAINT fk_actividad_programada_actividad_turistica FOREIGN KEY (id_actividad_turistica) REFERENCES parques.actividad_turistica (id_actividad_turistica),
@@ -476,6 +479,7 @@ BEGIN
 		descripcion VARCHAR(100) NOT NULL,
 		CONSTRAINT pk_estado_canon PRIMARY KEY CLUSTERED (id_estado_canon),
 		CONSTRAINT uq_estado_canon_descripcion UNIQUE (descripcion)
+		CONSTRAINT ck_estado_canon_descripcion CHECK (descripcion IN ('Pendiente', 'Pagado', 'Vencido', 'Anulado'))
 	);
 END;
 GO
