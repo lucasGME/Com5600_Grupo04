@@ -1,7 +1,7 @@
 /*
 Universidad Nacional de La Matanza
 Materia: Base de Datos Aplicadas (5600)
-Cuatriestre: 2026 - Primer Cuatrimestre, viernes tarde
+Cuatrimestre: 2026 - Primer Cuatrimestre, viernes tarde
 
 Integrantes:
 Mamani Estrada, Lucas Gabriel – 43624305 
@@ -364,7 +364,7 @@ BEGIN
 		CONSTRAINT pk_pase_entrada PRIMARY KEY CLUSTERED (id_detalle_venta),
 		CONSTRAINT ck_pase_entrada_fecha_acceso CHECK (fecha_acceso >= CONVERT(date, SYSDATETIME())),
 		CONSTRAINT fk_pase_entrada_detalle_venta FOREIGN KEY (id_detalle_venta) REFERENCES ventas.detalle_venta (id_detalle_venta),
-		CONSTRAINT fk_pase_entrada_entrada FOREIGN KEY (id_entrada) REFERENCES ventas.entrada (id_entrada),
+		CONSTRAINT fk_pase_entrada_entrada FOREIGN KEY (id_entrada) REFERENCES parques.entrada (id_entrada),
 		CONSTRAINT fk_pase_entrada_clima FOREIGN KEY (id_clima) REFERENCES ventas.clima (id_clima)
 	);
 END;
@@ -459,7 +459,7 @@ BEGIN
 END;
 GO
 
-IF OBJECT_ID(N'concesiones.tipo_actividad', N'U') IS NULL
+IF OBJECT_ID(N'concesiones.tipo_actividad_concesion', N'U') IS NULL
 BEGIN
 	CREATE TABLE concesiones.tipo_actividad_concesion
 	(
@@ -478,7 +478,7 @@ BEGIN
 		id_estado_canon INT IDENTITY(1,1) NOT NULL,
 		descripcion VARCHAR(100) NOT NULL,
 		CONSTRAINT pk_estado_canon PRIMARY KEY CLUSTERED (id_estado_canon),
-		CONSTRAINT uq_estado_canon_descripcion UNIQUE (descripcion)
+		CONSTRAINT uq_estado_canon_descripcion UNIQUE (descripcion),
 		CONSTRAINT ck_estado_canon_descripcion CHECK (descripcion IN ('Pendiente', 'Pagado', 'Vencido', 'Anulado'))
 	);
 END;
