@@ -1519,11 +1519,6 @@ BEGIN
 END;
 GO
 
----Revisar!!!!!!!!!
-
-USE BD_Parques_Nacionales;
-GO
-
 -- ============================================================
 --  ESQUEMA: ventas
 -- ============================================================
@@ -2386,9 +2381,6 @@ BEGIN
 
     DELETE FROM ventas.pase_actividad WHERE id_detalle_venta = @id_detalle_venta;
 END;
-GO
-
-USE BD_Parques_Nacionales;
 GO
 
 -- ============================================================
