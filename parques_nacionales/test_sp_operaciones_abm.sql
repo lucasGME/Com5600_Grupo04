@@ -9,7 +9,7 @@ Ju�rez, Javier David � 43446615
 Corpu, Mat�as Ariel - 43744403 
 Capandegui, Damian Leonel � 45807823 
 
-Grupo: 4
+Grupo:  4
 
 Script de testing de SPs de operaciones ABM (Alta, Baja, Modificaci�n) 
 de las tablas del sistema de gesti�n de Parques Nacionales.
