@@ -57,6 +57,12 @@ IF NOT EXISTS (SELECT 1 FROM sys.schemas WHERE name = N'rrhh')
 	EXEC(N'CREATE SCHEMA rrhh');
 GO
 
+IF NOT EXISTS (SELECT 1 FROM sys.schemas WHERE name = N'seguridad')
+BEGIN
+	EXEC(N'CREATE SCHEMA seguridad');
+END;
+GO
+
 --------------------------------------
 --------- CREACIÓN DE TABLAS ---------
 --------------------------------------
