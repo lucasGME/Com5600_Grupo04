@@ -22,7 +22,6 @@ Script de creación de procedimientos almacenados para gestión de concesiones e
 USE BD_Parques_Nacionales;
 GO
 
-
 ---------------------------------------------------------------------------------------
 ---------- REGISTRAR CONTRATO CONCESIÓN -----------------------------------------------
 ---------------------------------------------------------------------------------------

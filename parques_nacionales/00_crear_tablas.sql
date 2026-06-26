@@ -171,6 +171,7 @@ BEGIN
 	CREATE TABLE ventas.clima
 	(
 		id_clima INT IDENTITY(1,1) NOT NULL,
+		codigo_wmo INT NOT NULL, -- para almacenar el código WMO (World Meteorological Organization) del clima
 		descripcion VARCHAR(100) NOT NULL,
 		CONSTRAINT pk_clima PRIMARY KEY CLUSTERED (id_clima),
 		CONSTRAINT uq_clima_descripcion UNIQUE (descripcion)
