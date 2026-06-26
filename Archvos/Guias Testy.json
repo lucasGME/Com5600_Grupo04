@@ -1,0 +1,452 @@
+[
+	{
+		"legacy": 0,
+		"name": "Helen Black",
+		"date of birth": "Jan 6, 1999",
+		"phone": "7220-0470",
+		"email": "ultricies@outlook.com",
+		"title": "Titulo 1",
+		"specialty": "Specialidad 1"
+	},
+	{
+		"legacy": 50,
+		"name": "Elliott Simmons",
+		"date of birth": "Nov 26, 1993",
+		"phone": "6534-2401",
+		"email": "odio@protonmail.com",
+		"title": "Titulo 1",
+		"specialty": "Specialidad 2"
+	},
+	{
+		"legacy": 100,
+		"name": "Dustin Saunders",
+		"date of birth": "Mar 25, 2000",
+		"phone": "5577-4643",
+		"email": "nonummy@protonmail.net",
+		"title": "Titulo 2",
+		"specialty": "Specialidad 4"
+	},
+	{
+		"legacy": 150,
+		"name": "Kane Coleman",
+		"date of birth": "Mar 23, 1999",
+		"phone": "5307-2820",
+		"email": "enim.etiam@yahoo.net",
+		"title": "Titulo 1",
+		"specialty": "Specialidad 3"
+	},
+	{
+		"legacy": 200,
+		"name": "Judah Hodge",
+		"date of birth": "Nov 27, 1995",
+		"phone": "7948-8648",
+		"email": "laoreet.libero@icloud.ca",
+		"title": "Titulo 2",
+		"specialty": "Specialidad 4"
+	},
+	{
+		"legacy": 250,
+		"name": "Flavia Herman",
+		"date of birth": "Jul 30, 1997",
+		"phone": "3463-3167",
+		"email": "dolor.fusce@yahoo.com",
+		"title": "Titulo 2",
+		"specialty": "Specialidad 3"
+	},
+	{
+		"legacy": 300,
+		"name": "Basia Melendez",
+		"date of birth": "Feb 10, 1990",
+		"phone": "4716-7658",
+		"email": "pellentesque.massa@icloud.org",
+		"title": "Titulo 3",
+		"specialty": "Specialidad 1"
+	},
+	{
+		"legacy": 350,
+		"name": "Craig Fowler",
+		"date of birth": "Nov 25, 1987",
+		"phone": "0896-5614",
+		"email": "non.justo@protonmail.edu",
+		"title": "Titulo 5",
+		"specialty": "Specialidad 5"
+	},
+	{
+		"legacy": 400,
+		"name": "Arden Clayton",
+		"date of birth": "Apr 20, 1980",
+		"phone": "1342-6131",
+		"email": "aliquet.phasellus.fermentum@google.ca",
+		"title": "Titulo 4",
+		"specialty": "Specialidad 1"
+	},
+	{
+		"legacy": 450,
+		"name": "Wade Cochran",
+		"date of birth": "Mar 11, 1992",
+		"phone": "5188-0487",
+		"email": "feugiat.placerat@icloud.ca",
+		"title": "Titulo 3",
+		"specialty": "Specialidad 4"
+	},
+	{
+		"legacy": 500,
+		"name": "Reed Colon",
+		"date of birth": "Nov 6, 1992",
+		"phone": "2173-5051",
+		"email": "tortor@outlook.net",
+		"title": "Titulo 2",
+		"specialty": "Specialidad 5"
+	},
+	{
+		"legacy": 550,
+		"name": "Abdul Lott",
+		"date of birth": "Jul 15, 1990",
+		"phone": "7656-7181",
+		"email": "dolor@protonmail.couk",
+		"title": "Titulo 1",
+		"specialty": "Specialidad 5"
+	},
+	{
+		"legacy": 600,
+		"name": "Tatiana Parker",
+		"date of birth": "Aug 23, 1987",
+		"phone": "4725-6789",
+		"email": "ac.metus@google.com",
+		"title": "Titulo 3",
+		"specialty": "Specialidad 2"
+	},
+	{
+		"legacy": 650,
+		"name": "Libby Collier",
+		"date of birth": "Jan 21, 1987",
+		"phone": "5224-8311",
+		"email": "fermentum.vel@aol.edu",
+		"title": "Titulo 5",
+		"specialty": "Specialidad 1"
+	},
+	{
+		"legacy": 700,
+		"name": "Drake Harvey",
+		"date of birth": "Jan 20, 1996",
+		"phone": "1852-0737",
+		"email": "sapien@protonmail.ca",
+		"title": "Titulo 1",
+		"specialty": "Specialidad 4"
+	},
+	{
+		"legacy": 750,
+		"name": "Madison Cox",
+		"date of birth": "Feb 3, 1987",
+		"phone": "2603-2756",
+		"email": "nam.ac.nulla@google.couk",
+		"title": "Titulo 5",
+		"specialty": "Specialidad 1"
+	},
+	{
+		"legacy": 800,
+		"name": "Deanna Mcconnell",
+		"date of birth": "Aug 20, 1983",
+		"phone": "2762-8827",
+		"email": "ligula@google.net",
+		"title": "Titulo 1",
+		"specialty": "Specialidad 4"
+	},
+	{
+		"legacy": 850,
+		"name": "Forrest Gilbert",
+		"date of birth": "Oct 16, 1990",
+		"phone": "7643-4596",
+		"email": "sapien@outlook.net",
+		"title": "Titulo 5",
+		"specialty": "Specialidad 3"
+	},
+	{
+		"legacy": 900,
+		"name": "Kieran Webb",
+		"date of birth": "Mar 24, 1985",
+		"phone": "1352-8684",
+		"email": "primis.in@hotmail.ca",
+		"title": "Titulo 3",
+		"specialty": "Specialidad 5"
+	},
+	{
+		"legacy": 950,
+		"name": "Clementine Flynn",
+		"date of birth": "May 12, 1983",
+		"phone": "6188-6194",
+		"email": "diam.nunc.ullamcorper@hotmail.couk",
+		"title": "Titulo 3",
+		"specialty": "Specialidad 4"
+	},
+	{
+		"legacy": 1000,
+		"name": "Melodie Sosa",
+		"date of birth": "Jul 30, 1985",
+		"phone": "3294-5262",
+		"email": "turpis.egestas@google.edu",
+		"title": "Titulo 1",
+		"specialty": "Specialidad 4"
+	},
+	{
+		"legacy": 1050,
+		"name": "Joseph Caldwell",
+		"date of birth": "Jan 16, 1991",
+		"phone": "3668-5252",
+		"email": "viverra@hotmail.com",
+		"title": "Titulo 2",
+		"specialty": "Specialidad 4"
+	},
+	{
+		"legacy": 1100,
+		"name": "Francis Rich",
+		"date of birth": "Oct 16, 1984",
+		"phone": "7425-3547",
+		"email": "interdum.feugiat@google.org",
+		"title": "Titulo 2",
+		"specialty": "Specialidad 1"
+	},
+	{
+		"legacy": 1150,
+		"name": "Mara Morton",
+		"date of birth": "Jun 22, 1988",
+		"phone": "9768-1732",
+		"email": "aliquet@google.couk",
+		"title": "Titulo 5",
+		"specialty": "Specialidad 4"
+	},
+	{
+		"legacy": 1200,
+		"name": "Caleb Herring",
+		"date of birth": "Dec 6, 1995",
+		"phone": "4868-4182",
+		"email": "massa.vestibulum@aol.ca",
+		"title": "Titulo 4",
+		"specialty": "Specialidad 2"
+	},
+	{
+		"legacy": 1250,
+		"name": "Brent Hoover",
+		"date of birth": "Jun 27, 1994",
+		"phone": "0584-2171",
+		"email": "arcu.sed@aol.couk",
+		"title": "Titulo 1",
+		"specialty": "Specialidad 3"
+	},
+	{
+		"legacy": 1300,
+		"name": "Sheila Weeks",
+		"date of birth": "Mar 21, 1997",
+		"phone": "6417-8488",
+		"email": "sed.pede.nec@protonmail.com",
+		"title": "Titulo 5",
+		"specialty": "Specialidad 2"
+	},
+	{
+		"legacy": 1350,
+		"name": "Xantha Hampton",
+		"date of birth": "Dec 23, 1986",
+		"phone": "7204-7613",
+		"email": "nonummy@yahoo.ca",
+		"title": "Titulo 2",
+		"specialty": "Specialidad 5"
+	},
+	{
+		"legacy": 1400,
+		"name": "Bradley Wells",
+		"date of birth": "Feb 7, 1982",
+		"phone": "7526-6941",
+		"email": "dui@google.org",
+		"title": "Titulo 2",
+		"specialty": "Specialidad 3"
+	},
+	{
+		"legacy": 1450,
+		"name": "Tyler Adkins",
+		"date of birth": "Jul 7, 1991",
+		"phone": "6966-7561",
+		"email": "sem.vitae@google.couk",
+		"title": "Titulo 1",
+		"specialty": "Specialidad 1"
+	},
+	{
+		"legacy": 1500,
+		"name": "Lamar Mcbride",
+		"date of birth": "Dec 25, 1984",
+		"phone": "6982-3638",
+		"email": "pellentesque.tellus@yahoo.org",
+		"title": "Titulo 1",
+		"specialty": "Specialidad 5"
+	},
+	{
+		"legacy": 1550,
+		"name": "Liberty Morrow",
+		"date of birth": "Nov 27, 1984",
+		"phone": "7365-9747",
+		"email": "risus.at@outlook.ca",
+		"title": "Titulo 2",
+		"specialty": "Specialidad 5"
+	},
+	{
+		"legacy": 1600,
+		"name": "Jeremy Gamble",
+		"date of birth": "Mar 26, 1987",
+		"phone": "4918-5174",
+		"email": "quisque.ornare@google.ca",
+		"title": "Titulo 5",
+		"specialty": "Specialidad 4"
+	},
+	{
+		"legacy": 1650,
+		"name": "Wang Castaneda",
+		"date of birth": "Jun 22, 1996",
+		"phone": "9225-4573",
+		"email": "consectetuer.adipiscing@protonmail.ca",
+		"title": "Titulo 4",
+		"specialty": "Specialidad 4"
+	},
+	{
+		"legacy": 1700,
+		"name": "Bree Anthony",
+		"date of birth": "Apr 2, 1982",
+		"phone": "9988-7723",
+		"email": "mi.enim@aol.net",
+		"title": "Titulo 5",
+		"specialty": "Specialidad 2"
+	},
+	{
+		"legacy": 1750,
+		"name": "Raja Webb",
+		"date of birth": "Nov 1, 1994",
+		"phone": "6341-4415",
+		"email": "hendrerit@aol.edu",
+		"title": "Titulo 1",
+		"specialty": "Specialidad 4"
+	},
+	{
+		"legacy": 1800,
+		"name": "Brett Walton",
+		"date of birth": "Dec 28, 1987",
+		"phone": "9386-8572",
+		"email": "sed.pharetra@protonmail.edu",
+		"title": "Titulo 5",
+		"specialty": "Specialidad 3"
+	},
+	{
+		"legacy": 1850,
+		"name": "Chava Booth",
+		"date of birth": "Apr 1, 1989",
+		"phone": "1265-5240",
+		"email": "semper.tellus.id@google.org",
+		"title": "Titulo 2",
+		"specialty": "Specialidad 1"
+	},
+	{
+		"legacy": 1900,
+		"name": "Ella Owens",
+		"date of birth": "May 23, 1982",
+		"phone": "4390-1810",
+		"email": "nam@protonmail.ca",
+		"title": "Titulo 3",
+		"specialty": "Specialidad 1"
+	},
+	{
+		"legacy": 1950,
+		"name": "Lillith King",
+		"date of birth": "Oct 15, 1996",
+		"phone": "4561-8126",
+		"email": "accumsan.interdum@hotmail.net",
+		"title": "Titulo 3",
+		"specialty": "Specialidad 4"
+	},
+	{
+		"legacy": 2000,
+		"name": "Lee Weaver",
+		"date of birth": "Nov 4, 1986",
+		"phone": "3639-0511",
+		"email": "posuere.at.velit@aol.net",
+		"title": "Titulo 2",
+		"specialty": "Specialidad 1"
+	},
+	{
+		"legacy": 2050,
+		"name": "Ifeoma Sykes",
+		"date of birth": "Aug 19, 1997",
+		"phone": "3399-7512",
+		"email": "cursus.vestibulum@hotmail.org",
+		"title": "Titulo 1",
+		"specialty": "Specialidad 3"
+	},
+	{
+		"legacy": 2100,
+		"name": "Anjolie Arnold",
+		"date of birth": "Oct 23, 1983",
+		"phone": "5825-1178",
+		"email": "fringilla.cursus@hotmail.edu",
+		"title": "Titulo 2",
+		"specialty": "Specialidad 5"
+	},
+	{
+		"legacy": 2150,
+		"name": "Raymond Phillips",
+		"date of birth": "Aug 25, 1986",
+		"phone": "2488-5280",
+		"email": "sed.facilisis@hotmail.org",
+		"title": "Titulo 3",
+		"specialty": "Specialidad 1"
+	},
+	{
+		"legacy": 2200,
+		"name": "Cameron Mckinney",
+		"date of birth": "Jun 14, 1994",
+		"phone": "3823-1121",
+		"email": "non.sollicitudin@aol.ca",
+		"title": "Titulo 3",
+		"specialty": "Specialidad 5"
+	},
+	{
+		"legacy": 2250,
+		"name": "Quinn Hayden",
+		"date of birth": "May 17, 1986",
+		"phone": "5583-3842",
+		"email": "lectus.justo@yahoo.ca",
+		"title": "Titulo 3",
+		"specialty": "Specialidad 5"
+	},
+	{
+		"legacy": 2300,
+		"name": "Denise Ochoa",
+		"date of birth": "Mar 19, 1984",
+		"phone": "2637-2192",
+		"email": "gravida.mauris@aol.edu",
+		"title": "Titulo 1",
+		"specialty": "Specialidad 5"
+	},
+	{
+		"legacy": 2350,
+		"name": "Shelby Cole",
+		"date of birth": "Dec 20, 1984",
+		"phone": "8228-5284",
+		"email": "imperdiet.erat.nonummy@hotmail.couk",
+		"title": "Titulo 5",
+		"specialty": "Specialidad 3"
+	},
+	{
+		"legacy": 2400,
+		"name": "Lucas Mcclure",
+		"date of birth": "Nov 5, 1986",
+		"phone": "3335-7553",
+		"email": "eleifend@outlook.couk",
+		"title": "Titulo 1",
+		"specialty": "Specialidad 3"
+	},
+	{
+		"legacy": 2450,
+		"name": "Britanni Moreno",
+		"date of birth": "Dec 26, 1986",
+		"phone": "2298-4937",
+		"email": "luctus@aol.ca",
+		"title": "Titulo 5",
+		"specialty": "Specialidad 1"
+	}
+]
