@@ -11,18 +11,22 @@ Capandegui, Damian Leonel – 45807823
 
 Grupo: 4
 
-Script de testing para procedimientos almacenados relacionados a concesiones de parques nacionales
+Script de testing de procedimientos almacenados para gestión de concesiones en parques nacionales.
+- testing registra contrato concesión
+- testing genera cánones
+- testing registra pago de canon
+- testing actualiza estado de cánones vencidos
+- testing anula contrato concesión
 */
 
 USE BD_Parques_Nacionales;
 GO
 
 
------------------------------------------------------
------------- INSERCIONES PARA EL TESTING ------------
------------------------------------------------------
-
--- los id comienzan en uno por ser tablas vacias, y se insertan en orden de dependencia
+---------------------------------------------------------------------------------------
+---------- INSERCIONES PARA EL TESTING ------------------------------------------------
+---------------------------------------------------------------------------------------
+-- se tiene en cuenta que las tablas estan vacias
 
 -- PROVINCIAS, LOCALIDADES, TIPO DE PARQUE, PARQUE
 INSERT INTO parques.provincia (nombre)
@@ -52,13 +56,14 @@ VALUES
         ('Vencido'), 
         ('Anulado');
 
---------------------------------------------------------------
------------- TESTING REGISTRAR CONTRATO CONCESIÓN ------------
---------------------------------------------------------------
 
---------------------
--- INTENTO VALIDO --
---------------------
+---------------------------------------------------------------------------------------
+---------- TESTING REGISTRAR CONTRATO CONCESIÓN ---------------------------------------
+---------------------------------------------------------------------------------------
+
+----------------------------
+-- INTENTO VALIDO ----------
+----------------------------
 
 -- creación del contrato concesión y generación de los canones asociados al contrato concesión
 
@@ -87,11 +92,10 @@ JOIN concesiones.contrato_concesion cc ON c.id_contrato_concesion = cc.id_contra
 JOIN concesiones.empresa e ON cc.id_empresa = e.id_empresa
 WHERE cc.id_contrato_concesion = 1
 
--------------------------
---- INTENTO NO VALIDO ---
--------------------------
 
--- todos los errores juntos:
+----------------------------
+-- INTENTO NO VALIDO -------
+----------------------------
 
 -- parque no existe
 -- tipo actividad concesion no existe
@@ -109,18 +113,16 @@ EXEC concesiones.sp_registrar_contrato_concesion
     @p_id_contrato_concesion = NULL
 
 
+---------------------------------------------------------------------------------------
+---------- TESTING REGISTRAR PAGO CANON -----------------------------------------------
+---------------------------------------------------------------------------------------
 
-------------------------------------------------------
------------- TESTING REGISTRAR PAGO CANON ------------
-------------------------------------------------------
-
---------------------
--- INTENTO VALIDO --
---------------------
+----------------------------
+-- INTENTO VALIDO ----------
+----------------------------
 
 -- actualizar estado del primer canon de "Pendiente" a "Pagado" y registrar el pago del canon
 
--- canones estado antes del pago
 SELECT e.id_empresa, cc.id_contrato_concesion, c.id_canon, c.fecha_vencimiento, c.importe, ec.descripcion AS estado_canon
 FROM concesiones.canon c 
 JOIN concesiones.estado_canon ec ON c.id_estado_canon = ec.id_estado_canon
@@ -133,7 +135,6 @@ EXEC concesiones.sp_registrar_pago_canon
     @p_id_canon = 1,
     @p_monto_pagar = 1000.00
 
--- canones estado después del pago
 SELECT e.id_empresa, cc.id_contrato_concesion, c.id_canon, c.fecha_vencimiento, c.importe, ec.descripcion AS estado_canon
 FROM concesiones.canon c 
 JOIN concesiones.estado_canon ec ON c.id_estado_canon = ec.id_estado_canon
@@ -147,9 +148,9 @@ FROM concesiones.pago_canon
 WHERE id_canon = 1
 
 
--------------------------
--- INTENTOS NO VALIDOS --
--------------------------
+----------------------------
+-- INTENTO NO VALIDO -------
+----------------------------
 
 -- contrato concesion no existe
 -- canon no existe
@@ -165,16 +166,16 @@ EXEC concesiones.sp_registrar_pago_canon
     @p_id_canon = 1,
     @p_monto_pagar = 2000.00
 
-------------------------------------------------------
------ TESTING ACTUALIZAR ESTADO CANONES VENCIDOS -----
-------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+---------- TESTING ACTUALIZAR ESTADO CANONES VENCIDOS ---------------------------------
+---------------------------------------------------------------------------------------
 
 -- actualizar el estado de los cánones vencidos que no hayan sido pagados, ni anulados, a "Vencido"
 
 INSERT INTO concesiones.canon (fecha_vencimiento, importe, id_contrato_concesion, id_estado_canon)
 VALUES ('2020-01-01', 1000.00, 1, 1)
 
--- canones estado antes del la actualización de canones vencidos
 SELECT e.id_empresa, cc.id_contrato_concesion, c.id_canon, c.fecha_vencimiento, c.importe, ec.descripcion AS estado_canon
 FROM concesiones.canon c 
 JOIN concesiones.estado_canon ec ON c.id_estado_canon = ec.id_estado_canon
@@ -184,7 +185,6 @@ WHERE cc.id_contrato_concesion = 1
 
 EXEC concesiones.sp_actualizar_estado_canones_vencidos
 
--- canones estado antes del pago después de la actualización de canones vencidos
 SELECT e.id_empresa, cc.id_contrato_concesion, c.id_canon, c.fecha_vencimiento, c.importe, ec.descripcion AS estado_canon
 FROM concesiones.canon c 
 JOIN concesiones.estado_canon ec ON c.id_estado_canon = ec.id_estado_canon
@@ -193,18 +193,16 @@ JOIN concesiones.empresa e ON cc.id_empresa = e.id_empresa
 WHERE cc.id_contrato_concesion = 1
 
 
+---------------------------------------------------------------------------------------
+---------- TESTING ANULAR CONTRATO CONCESIÓN ------------------------------------------
+---------------------------------------------------------------------------------------
 
------------------------------------------------------------
------------- TESTING ANULAR CONTRATO CONCESIÓN ------------
------------------------------------------------------------
-
---------------------
--- INTENTO VALIDO --
---------------------
+----------------------------
+-- INTENTO VALIDO ----------
+----------------------------
 
 -- actualizar el estado de los cánones asociados al contrato concesión a "Anulado", excepto aquellos que ya se encuentran en estado "Pagado" o "Vencido"
 
--- antes de la anulación del contrato concesión
 SELECT e.id_empresa, cc.id_contrato_concesion, c.id_canon, c.fecha_vencimiento, c.importe, ec.descripcion AS estado_canon
 FROM concesiones.canon c 
 JOIN concesiones.estado_canon ec ON c.id_estado_canon = ec.id_estado_canon
@@ -215,7 +213,6 @@ WHERE cc.id_contrato_concesion = 1
 EXEC concesiones.sp_anular_contrato_concesion
     @p_id_contrato_concesion = 1
 
--- después de la anulación del contrato concesión
 SELECT e.id_empresa, cc.id_contrato_concesion, c.id_canon, c.fecha_vencimiento, c.importe, ec.descripcion AS estado_canon
 FROM concesiones.canon c 
 JOIN concesiones.estado_canon ec ON c.id_estado_canon = ec.id_estado_canon
@@ -224,21 +221,16 @@ JOIN concesiones.empresa e ON cc.id_empresa = e.id_empresa
 WHERE cc.id_contrato_concesion = 1
 
 
--------------------------
--- INTENTOS NO VALIDOS --
--------------------------
+----------------------------
+-- INTENTO NO VALIDO -------
+----------------------------
+
 -- contrato concesion no existe
 EXEC concesiones.sp_anular_contrato_concesion
     @p_id_contrato_concesion = 999
-
-
--------------------------------------
--- INTENTO NO VALIDO DE PAGO CANON --
--------------------------------------
 
 -- pagar canon anulado 
 EXEC concesiones.sp_registrar_pago_canon
     @p_id_contrato_concesion = 1,
     @p_id_canon = 3,
     @p_monto_pagar = 1000.00
-
