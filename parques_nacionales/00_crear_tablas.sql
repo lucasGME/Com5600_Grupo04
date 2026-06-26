@@ -531,7 +531,7 @@ BEGIN
 		id_detalle_venta INT NOT NULL,
 		fecha_acceso DATE NOT NULL,
 		id_entrada INT NOT NULL,
-		id_clima INT NOT NULL,
+		id_clima INT NULL,
 		CONSTRAINT pk_pase_entrada PRIMARY KEY CLUSTERED (id_detalle_venta),
 		CONSTRAINT ck_pase_entrada_fecha_acceso CHECK (fecha_acceso >= CONVERT(date, SYSDATETIME())),
 		CONSTRAINT fk_pase_entrada_detalle_venta FOREIGN KEY (id_detalle_venta) REFERENCES ventas.detalle_venta (id_detalle_venta),
