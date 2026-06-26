@@ -167,13 +167,13 @@ EXEC parques.sp_entrada_baja @id_entrada = 999;
 ----------------------------------------------------------
 SELECT * FROM parques.actividad_turistica;
 -- Caso exitoso
-EXEC parques.sp_actividad_turistica_alta @nombre = 'Garganta del Diablo', @duracion_horas = 2.5, @costo = 1500.00, @cupo_maximo = 50, @id_parque = 1, @id_tipo_actividad_turistica = 1;
-EXEC parques.sp_actividad_turistica_alta @nombre = 'Paseo Inferior', @duracion_horas = 1.0, @costo = 0.00, @cupo_maximo = 100, @id_parque = 1, @id_tipo_actividad_turistica = 1;
+EXEC parques.sp_actividad_turistica_alta @nombre = 'Garganta del Diablo', @duracion_horas = 2, @costo = 1500.00, @cupo_maximo = 50, @id_parque = 1, @id_tipo_actividad_turistica = 1;
+EXEC parques.sp_actividad_turistica_alta @nombre = 'Paseo Inferior', @duracion_horas = 1, @costo = 0.00, @cupo_maximo = 100, @id_parque = 1, @id_tipo_actividad_turistica = 1;
 -- Caso no exitoso (Nombre vac�o, Duraci�n, costo, cupo inv�lido, FKs inexistentes)
 EXEC parques.sp_actividad_turistica_alta @nombre = '', @duracion_horas = 0, @costo = -500, @cupo_maximo = 0, @id_parque = 999, @id_tipo_actividad_turistica = 999;
 ----------------------------------------------------------
 -- Caso exitoso
-EXEC parques.sp_actividad_turistica_modificacion @id_actividad_turistica = 1, @nombre = 'Tour Garganta del Diablo', @duracion_horas = 3.0, @costo = 2000.00, @cupo_maximo = 45, @id_parque = 1, @id_tipo_actividad_turistica = 1;
+EXEC parques.sp_actividad_turistica_modificacion @id_actividad_turistica = 1, @nombre = 'Tour Garganta del Diablo', @duracion_horas = 3, @costo = 2000.00, @cupo_maximo = 45, @id_parque = 1, @id_tipo_actividad_turistica = 1;
 -- Caso no exitoso (ID inexistente, Nombre vac�o, Duraci�n, costo, cupo inv�lido, FKs inexistentes)
 EXEC parques.sp_actividad_turistica_modificacion @id_actividad_turistica = 999, @nombre = '', @duracion_horas = 0, @costo = -500, @cupo_maximo = 0, @id_parque = 999, @id_tipo_actividad_turistica = 999;
 ----------------------------------------------------------

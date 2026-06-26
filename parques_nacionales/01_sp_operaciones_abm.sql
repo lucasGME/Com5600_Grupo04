@@ -702,7 +702,7 @@ GO
 
 CREATE OR ALTER PROCEDURE parques.sp_actividad_turistica_alta
     @nombre                      VARCHAR(150),
-    @duracion_horas              DECIMAL(4,2),
+    @duracion_horas              TINYINT,
     @costo                       DECIMAL(12,2),
     @cupo_maximo                 SMALLINT,
     @id_parque                   INT,
@@ -748,7 +748,7 @@ GO
 CREATE OR ALTER PROCEDURE parques.sp_actividad_turistica_modificacion
     @id_actividad_turistica      INT,
     @nombre                      VARCHAR(150),
-    @duracion_horas              DECIMAL(4,2),
+    @duracion_horas              TINYINT,
     @costo                       DECIMAL(12,2),
     @cupo_maximo                 SMALLINT,
     @id_parque                   INT,
