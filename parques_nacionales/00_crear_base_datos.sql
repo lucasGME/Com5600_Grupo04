@@ -20,12 +20,13 @@ Script de creación de base de datos, esquemas y tablas para el sistema de gesti
 USE master;
 GO
 
-ALTER DATABASE BD_Parques_Nacionales
-SET SINGLE_USER
-WITH ROLLBACK IMMEDIATE;
-GO
-
-DROP DATABASE BD_Parques_Nacionales;
+IF DB_ID(N'BD_Parques_Nacionales') IS NOT NULL
+BEGIN
+	ALTER DATABASE BD_Parques_Nacionales
+	SET SINGLE_USER
+	WITH ROLLBACK IMMEDIATE;
+	DROP DATABASE BD_Parques_Nacionales;
+END
 GO
 
 IF DB_ID(N'BD_Parques_Nacionales') IS NULL
