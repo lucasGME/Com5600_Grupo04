@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<SqlWorkbenchSqlProject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="parques_nacionales">
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="parques_nacionales">
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
@@ -11,8 +11,6 @@
           <Authentication>SQL</Authentication>
           <InitialDB />
           <LoginTimeout>15</LoginTimeout>
-          <TrustServerCertificate>False</TrustServerCertificate>
-          <EncryptionOption>True</EncryptionOption>
           <ExecutionTimeout>0</ExecutionTimeout>
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName>Microsoft SQL Server Management Studio - Consulta</ApplicationName>
@@ -25,8 +23,6 @@
           <Authentication>SQL</Authentication>
           <InitialDB />
           <LoginTimeout>15</LoginTimeout>
-          <TrustServerCertificate>True</TrustServerCertificate>
-          <EncryptionOption>True</EncryptionOption>
           <ExecutionTimeout>0</ExecutionTimeout>
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName>Microsoft SQL Server Management Studio - Consulta</ApplicationName>
@@ -39,8 +35,6 @@
           <Authentication>SQL</Authentication>
           <InitialDB />
           <LoginTimeout>30</LoginTimeout>
-          <TrustServerCertificate>False</TrustServerCertificate>
-          <EncryptionOption>True</EncryptionOption>
           <ExecutionTimeout>0</ExecutionTimeout>
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
@@ -53,8 +47,54 @@
           <Authentication>SQL</Authentication>
           <InitialDB />
           <LoginTimeout>30</LoginTimeout>
-          <TrustServerCertificate>False</TrustServerCertificate>
-          <EncryptionOption>True</EncryptionOption>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="DESKTOP-OEUG4KG:DESKTOP-OEUG4KG\lucas">
+          <Created>2026-06-28T19:13:22.6773836-03:00</Created>
+          <Type>SQL</Type>
+          <Server>DESKTOP-OEUG4KG</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="DESKTOP-OEUG4KG:login_admin">
+          <Created>2026-06-28T21:47:26.5714404-03:00</Created>
+          <Type>SQL</Type>
+          <Server>DESKTOP-OEUG4KG</Server>
+          <UserName>login_admin</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="DESKTOP-OEUG4KG:login_consultas">
+          <Created>2026-06-28T20:28:39.1610554-03:00</Created>
+          <Type>SQL</Type>
+          <Server>DESKTOP-OEUG4KG</Server>
+          <UserName>login_consultas</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="DESKTOP-OEUG4KG:login_operador">
+          <Created>2026-06-28T20:27:10.3879734-03:00</Created>
+          <Type>SQL</Type>
+          <Server>DESKTOP-OEUG4KG</Server>
+          <UserName>login_operador</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
           <ExecutionTimeout>0</ExecutionTimeout>
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
@@ -67,8 +107,6 @@
           <Authentication>SQL</Authentication>
           <InitialDB />
           <LoginTimeout>15</LoginTimeout>
-          <TrustServerCertificate>False</TrustServerCertificate>
-          <EncryptionOption>True</EncryptionOption>
           <ExecutionTimeout>0</ExecutionTimeout>
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
@@ -81,8 +119,6 @@
           <Authentication>SQL</Authentication>
           <InitialDB />
           <LoginTimeout>15</LoginTimeout>
-          <TrustServerCertificate>True</TrustServerCertificate>
-          <EncryptionOption>False</EncryptionOption>
           <ExecutionTimeout>0</ExecutionTimeout>
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
@@ -92,9 +128,9 @@
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
         <FileNode Name="00_crear_tablas.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:sa</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
-          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-OEUG4KG:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-OEUG4KG</AssociatedConnSrvName>
+          <AssociatedConnUserName />
           <FullPath>00_crear_tablas.sql</FullPath>
         </FileNode>
         <FileNode Name="01_sp_operaciones_abm.sql">
@@ -115,6 +151,30 @@
           <AssociatedConnUserName />
           <FullPath>crear_roles.sql</FullPath>
         </FileNode>
+        <FileNode Name="ejecutar_imports.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-OEUG4KG:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-OEUG4KG</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>ejecutar_imports.sql</FullPath>
+        </FileNode>
+        <FileNode Name="importar_guardaparques.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-OEUG4KG:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-OEUG4KG</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>importar_guardaparques.sql</FullPath>
+        </FileNode>
+        <FileNode Name="importar_guias.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-OEUG4KG:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-OEUG4KG</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>importar_guias.sql</FullPath>
+        </FileNode>
+        <FileNode Name="importar_parques.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-OEUG4KG:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-OEUG4KG</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>importar_parques.sql</FullPath>
+        </FileNode>
         <FileNode Name="sp_apis.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
@@ -128,8 +188,8 @@
           <FullPath>sp_concesiones.sql</FullPath>
         </FileNode>
         <FileNode Name="sp_reportes.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-OEUG4KG:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-OEUG4KG</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>sp_reportes.sql</FullPath>
         </FileNode>
@@ -151,10 +211,16 @@
           <AssociatedConnUserName />
           <FullPath>testing_cifrado_datos_sensibles.sql</FullPath>
         </FileNode>
+        <FileNode Name="testing_crear_roles.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-OEUG4KG:False:login_admin</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-OEUG4KG</AssociatedConnSrvName>
+          <AssociatedConnUserName>login_admin</AssociatedConnUserName>
+          <FullPath>testing_crear_roles.sql</FullPath>
+        </FileNode>
         <FileNode Name="testing_sp_apis.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:sa</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
-          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-OEUG4KG:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-OEUG4KG</AssociatedConnSrvName>
+          <AssociatedConnUserName />
           <FullPath>testing_sp_apis.sql</FullPath>
         </FileNode>
         <FileNode Name="testing_sp_concesiones.sql">
