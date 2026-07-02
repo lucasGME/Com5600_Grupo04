@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Parques Nacionales</title>
+    <meta name="description" content="Información sobre parques nacionales, reservas naturales y turismo en Argentina.">
+    <meta name="author" content="Matias Corpu">
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="pagina-parques">
+    <button class="boton-inicio" onclick="window.location.href='/'">Inicio</button>
+
+    <header class="cabecera-pagina">
+        <h1 class="titulo">ABM de Parques Nacionales</h1>
+    </header>
+
+    <main class="contenedor">
+        <section class="abm-parques">
+            <div>
+                <h2>Alta parque</h2>
+
+                <form id="formulario-parque-alta">
+                    <input type="text" id="nombre_alta" placeholder="Nombre" required>
+                    <input type="text" id="direccion_alta" placeholder="Dirección" required>
+                    <input type="number" id="latitud_alta" placeholder="Latitud" step="any" required>
+                    <input type="number" id="longitud_alta" placeholder="Longitud" step="any" required>
+                    <input type="number" id="superficie_alta" placeholder="Superficie" required>
+                    <input type="number" id="id_localidad_alta" placeholder="ID Localidad" required>
+                    <input type="number" id="id_tipo_parque_alta" placeholder="ID Tipo" required>
+
+                    <button class="boton-submit" type="submit">Crear Parque</button>
+                </form>
+
+            </div>
+
+            <div>
+                <h2>Modificación parque</h2>
+
+                <form id="formulario-parque-modificar">
+                    <input type="number" id="id_parque_modificar" placeholder="ID del parque a modificar" required>
+                    <input type="text" id="nombre_modificar" placeholder="Nombre" required>
+                    <input type="text" id="direccion_modificar" placeholder="Dirección" required>
+                    <input type="number" id="latitud_modificar" placeholder="Latitud" step="any" required>
+                    <input type="number" id="longitud_modificar" placeholder="Longitud" step="any" required>
+                    <input type="number" id="superficie_modificar" placeholder="Superficie" required>
+                    <input type="number" id="id_localidad_modificar" placeholder="ID Localidad" required>
+                    <input type="number" id="id_tipo_parque_modificar" placeholder="ID Tipo" required>
+
+                    <button class="boton-submit" type="submit">Modificar Parque</button>
+                </form>
+            </div>
+
+            <div>
+                <h2>Baja parque</h2>
+                <form id="formulario-parque-eliminar">
+                    <input type="number" id="id_parque_eliminar" placeholder="ID del parque a eliminar" required>
+                    <button class="boton-submit" type="submit">Eliminar Parque</button>
+                </form>
+            </div>
+        </section>
+        
+        <section class="contenedor-lista-parques">
+            <ul id="lista-parques"></ul>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

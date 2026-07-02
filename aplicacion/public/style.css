@@ -1,0 +1,409 @@
+/* reseteo de todos los estilos */
+:root {
+    --bg: #0f1115;
+    --bg-elevated: #151922;
+    --bg-soft: #1b2130;
+    --border: rgba(255, 255, 255, 0.08);
+    --text: #f3f5f7;
+    --muted: #a8b0bf;
+    --accent: #6aa6ff;
+    --accent-strong: #8bb9ff;
+    --shadow: 0 16px 40px rgba(0, 0, 0, 0.32);
+    --radius-lg: 24px;
+    --radius-md: 18px;
+    --radius-sm: 12px;
+    --transition: 220ms ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background:
+        radial-gradient(circle at top left, rgba(106, 166, 255, 0.14), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(106, 166, 255, 0.08), transparent 30%),
+        var(--bg);
+    color: var(--text);
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    background: none;
+}
+
+.pagina-inicio,
+.pagina-parques {
+    position: relative;
+}
+
+.pantalla-inicio {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.cabecera-inicio {
+    text-align: center;
+    max-width: 900px;
+}
+
+.titulo {
+    font-size: clamp(2rem, 4vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+}
+
+.subtitulo {
+    margin-top: 0.75rem;
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+.operaciones {
+    width: min(1100px, 100%);
+}
+
+.operaciones-lista {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.operacion-card {
+    min-height: 96px;
+}
+
+.operacion-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 96px;
+    padding: 1.1rem 1.4rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+    text-align: center;
+    font-weight: 600;
+    color: var(--text);
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+}
+
+.operacion-link:hover,
+.operacion-link:focus-visible {
+    transform: translateY(-2px) scale(1.015);
+    border-color: rgba(106, 166, 255, 0.45);
+    box-shadow: 0 0 0 1px rgba(106, 166, 255, 0.18), 0 18px 40px rgba(106, 166, 255, 0.12);
+    background: linear-gradient(180deg, rgba(106, 166, 255, 0.11), rgba(255, 255, 255, 0.03));
+}
+
+.operacion-card.is-disabled,
+.operacion-card.no-disponible {
+    opacity: 0.38;
+    cursor: not-allowed;
+}
+
+.operacion-card.is-disabled .operacion-link,
+.operacion-card.no-disponible .operacion-link {
+    pointer-events: none;
+    box-shadow: none;
+    transform: none;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--muted);
+}
+
+/* ABM de Parques Nacionales */
+
+.pagina-parques {
+    padding: 1.5rem;
+}
+
+.cabecera-pagina {
+    height: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 9rem;
+}
+
+.boton-inicio {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 5.5rem;
+    height: 2.75rem;
+    padding: 0 1.15rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: rgba(21, 25, 34, 0.88);
+    color: var(--text);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(12px);
+    cursor: pointer;
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+}
+
+.boton-inicio:hover,
+.boton-inicio:focus-visible {
+    transform: translateY(-2px) scale(1.03);
+    border-color: rgba(106, 166, 255, 0.5);
+    background: rgba(27, 33, 48, 0.96);
+    box-shadow: 0 0 0 1px rgba(106, 166, 255, 0.18), 0 16px 34px rgba(0, 0, 0, 0.38);
+}
+
+.contenedor {
+    width: 100%;
+    height: calc(100vh - 7rem - 3rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+    gap: 1.25rem;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.abm-parques,
+.contenedor-lista-parques {
+    min-height: 0;
+    background: rgba(21, 25, 34, 0.82);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+}
+
+.abm-parques {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    overflow-y: scroll;
+}
+
+.abm-parques > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.abm-parques h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.01em;
+}
+
+.abm-parques form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.abm-parques input {
+    width: 100%;
+    height: 2.8rem;
+    padding: 0 0.95rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-sm);
+    background: var(--bg-soft);
+    color: var(--text);
+    outline: none;
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+}
+
+.abm-parques input::placeholder {
+    color: rgba(168, 176, 191, 0.72);
+}
+
+.abm-parques input:focus {
+    border-color: rgba(106, 166, 255, 0.68);
+    box-shadow: 0 0 0 3px rgba(106, 166, 255, 0.12);
+    background: #202739;
+}
+
+.boton-submit {
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 9.5rem;
+    height: 2.8rem;
+    padding: 0 1rem;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(106, 166, 255, 0.92), rgba(82, 139, 242, 0.92));
+    color: #0f1115;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        filter var(--transition);
+    box-shadow: 0 12px 28px rgba(106, 166, 255, 0.22);
+}
+
+.boton-submit:hover,
+.boton-submit:focus-visible {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 16px 34px rgba(106, 166, 255, 0.28);
+    filter: brightness(1.05);
+}
+
+.contenedor-lista-parques {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+#lista-parques {
+    list-style: none;
+    display: grid;
+    gap: 0.9rem;
+    align-content: start;
+    overflow-y: auto;
+    min-height: 0;
+    padding-right: 0.35rem;
+    scrollbar-gutter: stable;
+}
+
+#lista-parques::-webkit-scrollbar, .abm-parques::-webkit-scrollbar {
+    width: 10px;
+}
+
+#lista-parques::-webkit-scrollbar-track, .abm-parques::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#lista-parques::-webkit-scrollbar-thumb, .abm-parques::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+.card-parque {
+    display: grid;
+    gap: 0.35rem;
+    padding: 1rem 1rem 1.1rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.02));
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.card-parque h3 {
+    font-size: 1.02rem;
+    letter-spacing: -0.02em;
+}
+
+.card-parque p {
+    color: var(--muted);
+    font-size: 0.93rem;
+    line-height: 1.35;
+}
+
+.card-parque pre {
+    margin-top: 0.4rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    color: rgba(168, 176, 191, 0.88);
+    font-size: 0.8rem;
+    line-height: 1.45;
+    overflow: auto;
+}
+
+@media (max-width: 1100px) {
+    .operaciones-lista {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor {
+        grid-template-columns: 1fr;
+        height: calc(100vh - 7rem - 3rem);
+    }
+
+    .abm-parques {
+        grid-template-rows: none;
+        grid-auto-rows: minmax(260px, auto);
+    }
+}
+
+@media (max-width: 720px) {
+    .pantalla-inicio {
+        padding: 1.25rem;
+    }
+
+    .pagina-parques {
+        padding: 1rem;
+    }
+
+    .cabecera-pagina {
+        height: auto;
+        padding-right: 0;
+        padding-bottom: 5rem;
+    }
+
+    .boton-inicio {
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .contenedor {
+        height: calc(100vh - 6rem - 2rem);
+    }
+
+    .abm-parques,
+    .contenedor-lista-parques {
+        border-radius: 18px;
+    }
+}
+
